@@ -1,7 +1,7 @@
 {
   "py/object": "pros.conductor.project.Project",
   "py/state": {
-    "project_name": "21D Code",
+    "project_name": "21D Code EZ",
     "target": "v5",
     "templates": {
       "EZ-Template": {
@@ -190,7 +190,8 @@
     },
     "upload_options": {
       "icon": "pros",
-      "description": "21Deez Nuts"
+      "description": "21Deez Nuts",
+      "slot": 1
     }
   }
 }

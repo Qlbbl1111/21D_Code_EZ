@@ -8,42 +8,21 @@ bool latch3 = false;
 bool toggle3 = false;
 int flywheelSpeed = 0;
 
-void setFlywheel(int a) {
-    flywheel_a = a;
-    flywheel_b = a;
+void setFlywheelMotors(int value) {
+    flywheel_a = value;
+    flywheel_b = value;
 }
-/*
-void setCompresser(){
-    static bool pressed = false;
-    pressed = !pressed;
-    if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_LEFT)) {
-    }
-    if (toggle3) {
-        compesser.set_value(true);
-    } else {
-        compesser.set_value(false);
-    } 
-    if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_LEFT)) {
-    if (!latch3) {
-        toggle3 = !toggle3;
-        latch3 = true;
-        }
-    }
-    else{
-        latch3 = false;
-    }
-}
-*/
-void setFlywheelMotors() {
+
+void setFlywheel() {
    //flywheel
     if (toggle && !toggle2) { //slow
-        setFlywheel(90);
+        setFlywheelMotors(90);
     }
     else if (toggle2 && !toggle) { //fast
-        setFlywheel(115);
+        setFlywheelMotors(115);
     }
     else {
-        setFlywheel(0);
+        setFlywheelMotors(0);
     }
     
     if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_R2) && shift() == false) {//slow
@@ -70,3 +49,4 @@ void setFlywheelMotors() {
     }
 
   }
+  

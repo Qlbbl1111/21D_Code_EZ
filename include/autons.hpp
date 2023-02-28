@@ -18,6 +18,8 @@ void two_mogo_constants();
 void exit_condition_defaults();
 void modified_exit_condition();
 
+void none();
+
 void closeRoller();
 
 void farRoller();

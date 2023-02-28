@@ -248,13 +248,37 @@ void interfered_example() {
 // . . .
 // Make your own autonomous functions here!
 // . . .
+void none(){}
 
 void closeRoller() {
-
+  chassis.reset_gyro(); 
+  chassis.reset_drive_sensor(); 
+  chassis.set_drive_brake(MOTOR_BRAKE_HOLD);
+  setIntakeMotors(-100);
+  chassis.set_drive_pid(5, DRIVE_SPEED, true);
+  chassis.wait_drive();
+  setIntakeMotors(0);
+  chassis.set_drive_pid(-5, DRIVE_SPEED, true);
+  chassis.wait_drive();
 }
 
 void farRoller() {
-
+  chassis.reset_gyro(); 
+  chassis.reset_drive_sensor(); 
+  chassis.set_drive_brake(MOTOR_BRAKE_HOLD);
+  chassis.set_drive_pid(-5, DRIVE_SPEED, true);
+  chassis.wait_drive();
+  chassis.set_turn_pid(-90, TURN_SPEED);
+  chassis.wait_drive();
+  chassis.set_drive_pid(18, DRIVE_SPEED, true);
+  chassis.wait_drive();
+  chassis.set_turn_pid(0, TURN_SPEED);
+  chassis.wait_drive();
+  setIntakeMotors(-100);
+  chassis.set_drive_pid(13.5, DRIVE_SPEED, true);
+  chassis.wait_drive();
+  chassis.set_drive_pid(-5, DRIVE_SPEED, true);
+  setIntakeMotors(0);
 }
 
 void skills() {
