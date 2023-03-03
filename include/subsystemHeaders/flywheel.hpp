@@ -1,4 +1,4 @@
 #include "main.h"
-
-void setFlywheel();
 void setFlywheelMotors(int value);
+void controlFlywheel();
+void setFlywheel(double targetVelocity);

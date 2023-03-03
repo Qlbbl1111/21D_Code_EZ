@@ -1,4 +1,4 @@
 #include "main.h"
 
-void setIndexerMotors(int value);
+void setIndexerMotor(int value);
 void setIndexer();

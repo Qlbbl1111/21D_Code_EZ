@@ -1,4 +1,4 @@
 #include "main.h"
 
-void setIntakeMotors(int value);
+void setIntakeMotor(int value);
 void setIntake();

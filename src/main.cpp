@@ -158,12 +158,13 @@ void opcontrol() {
 
   while (true) {
     chassis.tank(); // Tank control
-		setFlywheel();
+    controlFlywheel();
 		setIntake();
 		setIndexer();
 		triggerExpansion();
 		triggerBlocker();
-
+    pros::lcd::print(4, "Actual Velocity: %lf\n", flywheel_a.get_actual_velocity());
+    pros::lcd::print(5, "Filtered Velocity: %lf\n", okapi::EmaFilter(1).filter(flywheel_a.get_actual_velocity()));
     pros::delay(ez::util::DELAY_TIME); // This is used for timer calculations!  Keep this ez::util::DELAY_TIME
   }
 }
